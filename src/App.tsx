@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, ChakraProvider, Heading } from "@chakra-ui/react";
+import { Link, Route, Routes } from "react-router-dom";
+import { Suspense, lazy } from "react";
+
+// const HomePage = lazy(() => import("./features/Home/pages/Page"));
+const ZustandTestsPage = lazy(
+  () => import("./features/ZustandTests/pages/Page")
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Heading data-testid="welcome-title">React Tests</Heading>
+
+      <Box as="nav" mx={-2} display="flex">
+        <Box mx={2}>
+          <Link to="/">Home</Link>
+        </Box>
+        <Box mx={2}>
+          <Link to="/zustand-tests">Zustand Tests</Link>
+        </Box>
+      </Box>
+
+      <Routes>
+        {/* <Route path="/" element={<HomePage />} /> */}
+        <Route
+          path="/zustand-tests"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <ZustandTestsPage />
+            </Suspense>
+          }
+        />
+      </Routes>
+    </ChakraProvider>
   );
 }
 
