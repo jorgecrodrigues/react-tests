@@ -15,6 +15,9 @@ export default function Layout() {
         <Box mx={2}>
           <Link to="/react-query-tests">React Query Tests</Link>
         </Box>
+        <Box>
+          <Link to="/google-maps-tests">Google Maps Tests</Link>
+        </Box>
       </Box>
       <Outlet />
     </Box>

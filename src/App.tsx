@@ -21,6 +21,9 @@ const ZustandTestsPage = lazy(
 const ReactQueryTestsPage = lazy(
   () => import("./features/ReactQueryTests/pages/Page")
 );
+const GoogleMapsTestsPage = lazy(
+  () => import("./features/GoogleMapsTests/pages/Page")
+);
 
 function App() {
   return (
@@ -42,6 +45,14 @@ function App() {
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <ReactQueryTestsPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="google-maps-tests"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <GoogleMapsTestsPage />
                 </Suspense>
               }
             />
