@@ -26,6 +26,7 @@ export default function Page() {
       >
         {m.map((_, i) => (
           <Marker
+            key={i}
             position={{
               lat: parseFloat(`-16.${i}`),
               lng: parseFloat(`-56.${i}`),
