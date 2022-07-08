@@ -5,7 +5,7 @@ import { Wrapper } from "@googlemaps/react-wrapper";
 import { useState } from "react";
 
 export default function Page() {
-  const [m] = useState(new Array(300).fill(undefined));
+  const [m] = useState(new Array(800).fill(undefined));
 
   return (
     <Wrapper

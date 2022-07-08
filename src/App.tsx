@@ -25,6 +25,10 @@ const GoogleMapsTestsPage = lazy(
   () => import("./features/GoogleMapsTests/pages/Page")
 );
 
+const DexieDbTestsPage = lazy(
+  () => import("./features/DexieDbTests/pages/Page")
+);
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -53,6 +57,14 @@ function App() {
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <GoogleMapsTestsPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="dexie-db-tests"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <DexieDbTestsPage />
                 </Suspense>
               }
             />

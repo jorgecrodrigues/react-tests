@@ -18,6 +18,9 @@ export default function Layout() {
         <Box>
           <Link to="/google-maps-tests">Google Maps Tests</Link>
         </Box>
+        <Box>
+          <Link to="/dexie-db-tests">Dexie DB Tests</Link>
+        </Box>
       </Box>
       <Outlet />
     </Box>

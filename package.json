@@ -15,6 +15,8 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "axios": "^0.26.1",
+    "dexie": "^3.2.2",
+    "dexie-react-hooks": "^1.1.1",
     "framer-motion": "^6",
     "msw": "^0.39.2",
     "react": "^18.0.0",
